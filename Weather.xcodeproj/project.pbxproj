@@ -58,13 +58,29 @@
 			children = (
 				7D4B8C7A24A24A5000123D13 /* AppDelegate.swift */,
 				7D4B8C7C24A24A5000123D13 /* SceneDelegate.swift */,
-				7D4B8C7E24A24A5000123D13 /* ViewController.swift */,
-				7D4B8C8024A24A5000123D13 /* Main.storyboard */,
+				7D4B8C8E24A24A5C00123D13 /* Controller */,
+				7D4B8C8F24A24A8700123D13 /* View */,
 				7D4B8C8324A24A5100123D13 /* Assets.xcassets */,
 				7D4B8C8524A24A5100123D13 /* LaunchScreen.storyboard */,
 				7D4B8C8824A24A5100123D13 /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		7D4B8C8E24A24A5C00123D13 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7D4B8C7E24A24A5000123D13 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7D4B8C8F24A24A8700123D13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D4B8C8024A24A5000123D13 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
