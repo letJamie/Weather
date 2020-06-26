@@ -10,6 +10,8 @@
  
  struct WeatherManager {
     
+    //let weatherModel = WeatherModel()
+    
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=ffa90d9279c5c55c5634e893ee47a6a1&units=metric"
     
     func fatchWeather(cityName: String) {
@@ -50,10 +52,12 @@
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData )
             
-            print(decodedData.weather[0].description)
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp_min
+            let name = decodedData.name
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             
-            
-            
+            print(weather.getConditionName(weatherId: id))
         }
         catch {
             print(error)
@@ -62,3 +66,6 @@
     
     
  }
+ 
+ 
+ 
