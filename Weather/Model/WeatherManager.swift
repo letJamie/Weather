@@ -57,7 +57,7 @@
             let name = decodedData.name
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             
-            print(weather.getConditionName(weatherId: id))
+            print(weather.temperatureString)
         }
         catch {
             print(error)
