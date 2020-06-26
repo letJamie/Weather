@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D3861B824A3561700624DE1 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3861B724A3561700624DE1 /* WeatherManager.swift */; };
+		7D49741B24A623A100DAD085 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D49741A24A623A100DAD085 /* WeatherData.swift */; };
 		7D4B8C7B24A24A5000123D13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B8C7A24A24A5000123D13 /* AppDelegate.swift */; };
 		7D4B8C7D24A24A5000123D13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B8C7C24A24A5000123D13 /* SceneDelegate.swift */; };
 		7D4B8C7F24A24A5000123D13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B8C7E24A24A5000123D13 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		7D3861B724A3561700624DE1 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		7D49741A24A623A100DAD085 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		7D4B8C7724A24A5000123D13 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4B8C7A24A24A5000123D13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D4B8C7C24A24A5000123D13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				7D3861B724A3561700624DE1 /* WeatherManager.swift */,
+				7D49741A24A623A100DAD085 /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4B8C7F24A24A5000123D13 /* ViewController.swift in Sources */,
+				7D49741B24A623A100DAD085 /* WeatherData.swift in Sources */,
 				7D4B8C7B24A24A5000123D13 /* AppDelegate.swift in Sources */,
 				7D3861B824A3561700624DE1 /* WeatherManager.swift in Sources */,
 				7D4B8C7D24A24A5000123D13 /* SceneDelegate.swift in Sources */,

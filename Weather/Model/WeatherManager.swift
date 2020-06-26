@@ -1,13 +1,13 @@
  //
-//  WeatherManager.swift
-//  Weather
-//
-//  Created by Jamie on 2020/06/24.
-//  Copyright © 2020 Jamie. All rights reserved.
-//
-
-import Foundation
-
+ //  WeatherManager.swift
+ //  Weather
+ //
+ //  Created by Jamie on 2020/06/24.
+ //  Copyright © 2020 Jamie. All rights reserved.
+ //
+ 
+ import Foundation
+ 
  struct WeatherManager {
     
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=ffa90d9279c5c55c5634e893ee47a6a1&units=metric"
@@ -25,26 +25,40 @@ import Foundation
             
             let session = URLSession(configuration: .default)
             
-            let task = session.dataTask(with: url, completionHandler: handle(data: urlResponse: error:) )
+            let task = session.dataTask(with: url) { (data , urlResponse, error) in
                 
+                
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                if let safeData = data {
+                    
+                    self.parseJason(weatherData: safeData)
+                    
+                }
+            }
             task.resume()
         }
         
         
     }
     
-    func handle(data: Data?, urlResponse: URLResponse?, error: Error?) {
-        
-        if error != nil {
-            print(error!)
-            return
+    func parseJason(weatherData: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData )
+            
+            print(decodedData.weather[0].description)
+            
+            
+            
         }
-        
-        if let safeData = data {
-            
-            let dataString = String(data: safeData, encoding: .utf8)
-            print(dataString)
-            
+        catch {
+            print(error)
         }
     }
+    
+    
  }
