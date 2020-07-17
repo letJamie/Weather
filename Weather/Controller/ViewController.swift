@@ -24,18 +24,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherManager.delegate = self
-        searchTextField.delegate = self
         locationManager.delegate = self
-        
-        
+
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+
+        weatherManager.delegate = self
+
+        searchTextField.delegate = self
+
+        
+        
     }
     
     @IBAction func locationPressed(_ sender: UIButton) {
         
-        
+        locationManager.requestLocation()
         
     }
     
@@ -50,9 +54,6 @@ extension ViewController: UITextFieldDelegate {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
     }
-    
-    
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
@@ -77,11 +78,8 @@ extension ViewController: UITextFieldDelegate {
         if let city = searchTextField.text {
             weatherManager.fetchWeather(cityName: city )
         }
-        
         searchTextField.text = ""
     }
-    
-    
 }
 
 //MARK: - WeatherManagerDelegate
@@ -110,6 +108,7 @@ extension ViewController: CLLocationManagerDelegate {
         
         if let location = locations.last {
             
+            locationManager.stopUpdatingLocation()
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
             weatherManager.fetchWeather(latitude: lat, longitude: lon)
